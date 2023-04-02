@@ -1,8 +1,7 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-
-import java.time.Duration;
+import org.openqa.selenium.support.ui.Select;
 
 public class SampleTest {
     public static void main(String[] args)  {
@@ -17,7 +16,17 @@ public class SampleTest {
         driver.findElement(By.cssSelector("div.container:nth-child(4) div.row div.col-sm-12 div.buttons.clearfix:nth-child(8) div.pull-right > a.btn.btn-primary")).click();
         driver.findElement(By.xpath("//body/div[@id='checkout-cart']/div[2]/div[1]/div[1]/div[1]/div[1]/h4[1]/a[1]")).click();
         driver.findElement(By.cssSelector("#input-coupon")).sendKeys("123");
-        //driver.findElement(By.xpath("//input[@id='button-coupon']")).click();
+        driver.findElement(By.cssSelector("//a[@href = '#collapse-shipping']")).click();
+        Select drpRegion = new Select(driver.findElement(By.name("zone_id")));
+        drpRegion.selectByVisibleText("Kent");
+        driver.findElement(By.name("//input[(@name  = 'postcode')]")).sendKeys("BR6 7NZ");
+        driver.findElement(By.id("//button[@id = 'button-quote']")).click();
+        driver.findElement(By.cssSelector("//a[@href = '#collapse-voucher']"));
+        driver.findElement(By.cssSelector("//input[@name = 'voucher']")).sendKeys("TEST");
+        driver.findElement(By.cssSelector("//input[@id = 'button-voucher']")).click();
+        driver.findElement(By.cssSelector("//a[@class = 'btn btn-primary']")).click();
+        driver.findElement(By.linkText("//a[text() = 'Checkout']")).click();
+
 
 
 
