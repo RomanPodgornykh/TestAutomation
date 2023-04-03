@@ -7,7 +7,7 @@ public class SampleTest {
     public static void main(String[] args)  {
         ChromeOptions co = new ChromeOptions();
         co.addArguments("--remote-allow-origins=*");
-        System.setProperty("webdriver.chrome.driver","C:\\Users\\Admin\\IdeaProjects\\TestAutomation\\Chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver",""C:\IdeaProjects\TestAutomation\chromedriver.exe"");
 
         ChromeDriver driver = new ChromeDriver(co);
         driver.get("http://tutorialsninja.com/demo/");
